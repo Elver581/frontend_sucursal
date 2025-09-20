@@ -37,13 +37,15 @@ const Login = () => {
       setTimeout(() => {
         // Suponiendo que result.user es el usuario autenticado
     const user = result.user || result.data?.user;
-    console.log('User:', user);
-    if (user && user.branch_id) {
-      console.log('Branch ID:', user.branch_id);
-      navigate(`/sucursales/${user.branch_id}`);
-    } else {
-      navigate('/dashboard');
-    }
+if (user?.is_central) {
+  navigate("/dashboard");
+} else if (user?.branch_id) {
+  navigate(`/sucursales/${user.branch_id}`);
+} else {
+  navigate("/dashboard");
+}
+
+
       }, 1000);
     } else {
       // Manejar error específico de empresa no activa

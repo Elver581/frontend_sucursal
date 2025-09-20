@@ -180,7 +180,7 @@ const Navbar = () => {
     ETS Technology
   </span>
   <p className="text-xs text-gray-500 hidden sm:block font-medium leading-tight">
-    Servicios de Desarrollo de Software
+  Desarrollo de Software
   </p>
 </div>
 
